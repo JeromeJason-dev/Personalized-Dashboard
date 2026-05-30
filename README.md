@@ -53,8 +53,12 @@ No installation or build step required.
 2. **Open `index.html`** in any modern web browser.
 3. Enter your name and age, then click **Generate Dashboard**.
 
-That's it — the app runs entirely in the browser.
+```
+git clone https://github.com/JeromeJason-dev/Personalized-Dashboard.git
+cd personalized-dashboard
+open index.html
 
+```
 
 ## How It Works
 
