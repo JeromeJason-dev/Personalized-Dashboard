@@ -1,6 +1,6 @@
 # Personalized Dashboard
 
-A lightweight, client-side web application that generates a personalized dashboard based on user input. No frameworks, no backend — just HTML, Tailwind CSS, and vanilla JavaScript.
+A lightweight, client-side web application that generates a personalized dashboard based on user input. 
 
 
 ## Overview
