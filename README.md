@@ -53,7 +53,7 @@ No installation or build step required.
 2. **Open `index.html`** in any modern web browser.
 3. Enter your name and age, then click **Generate Dashboard**.
 
-```
+```bash 
 git clone https://github.com/JeromeJason-dev/Personalized-Dashboard.git
 cd personalized-dashboard
 open index.html
