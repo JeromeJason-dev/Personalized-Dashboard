@@ -30,13 +30,18 @@
         function renderDashboard() {
             // Retrieve data from localStorage
             const name = localStorage.getItem('savedName');
-            const age = parseInt(localStorage.getItem('savedAge'), 10);
+            const age = localStorage.getItem('savedAge');
 
             // If no data exists, keep the dashboard hidden
             if (!name || !age) {
                 dashboard.classList.add('hidden');
+                userNameInput.value = '';
+                userAgeInput.value = '';
                 return;
             }
+
+            //Strict number parsing
+            const parsedAge = Number(age);
 
             // Populate Form inputs so they stay filled on refresh
             userNameInput.value = name;
@@ -46,7 +51,7 @@
             greeting.textContent = `Welcome back, ${name}! 👋`;
 
             // Display age in months
-            const months = calculateMonths(age);
+            const months = calculateMonths(parsedAge);
             ageInMonths.textContent = `You have been alive for approximately ${months.toLocaleString()} months.`;
 
             // 4. Adult Content Check (Conditional statements)
@@ -83,9 +88,12 @@
 
         // Clear Data Event Listener
         clearBtn.addEventListener('click', function() {
-            localStorage.clear();
+            localStorage.removeItem('savedName');
+            localStorage.removeItem('savedAge');
+
             userForm.reset();
-            dashboard.classList.add('hidden');
+            //Delegate UI cleanup to the unified render function
+            renderDashboard();
         });
 
         // Initialize App on Page Load (Checks if user has visited before)
